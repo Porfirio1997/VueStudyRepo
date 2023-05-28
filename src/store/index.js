@@ -4,32 +4,72 @@ import { createStore } from "vuex";
 const store = createStore({
   state() {
     return {
-      registers: [],
+      persons: [],
     };
   },
   getters: {
-    registers(state) {
-      return state.registers;
+    persons(state) {
+      return state.persons;
     },
   },
   mutations: {
-    setRegisters(state, registers) {
-      state.registers = registers;
+    setPersons(state, persons) {
+      state.persons = persons;
     },
-    addRegister(state, registro) {
-      state.registers = [...state.registers, registro];
+    addPerson(state, person) {
+      state.persons = [...state.persons, person];
+    },
+    updatePerson(state, person) {
+      state.persons.filter(el, (index) => {
+        if (person.id == el.id) {
+          arr.splice(index, 1);
+        }
+      });
+      addPerson(person);
     },
   },
   actions: {
-    fetchRegisters({ commit }) {
+    fetchPersons({ commit }) {
       axios
-        .get("/api/register")
-        .then((result) => commit("setRegisters", result.data));
+        .get("/api/person")
+        .then((result) => commit("setpersons", result.data))
+        .catch(function (error) {
+          if (error.response) {
+            console.log(error.response.status + "-" + error.response.data);
+          }
+        });
     },
-    sendRegister({ commit }, register) {
+    sendPerson({ commit }, person) {
       axios
-        .post("/api/register", register)
-        .then((result) => commit("addRegisters", result.data));
+        .post("/api/person", person)
+        .then((result) => commit("addpersons", result.data))
+        .catch(function (error) {
+          if (error.response) {
+            console.log(error.response.status + "-" + error.response.data);
+          }
+        });
+    },
+    deletePerson(person) {
+      axios
+        .delete("/api/person/" + person.id)
+        .then(() => {
+          return result.data;
+        })
+        .catch(function (error) {
+          if (error.response) {
+            console.log(error.response.status + "-" + error.response.data);
+          }
+        });
+    },
+    updatePerson({ commit }, person) {
+      axios
+        .put("/api/person/" + person.id, person)
+        .then((result) => commit("updatePerson", result.data))
+        .catch(function (error) {
+          if (error.response) {
+            console.log(error.response.status + "-" + error.response.data);
+          }
+        });
     },
   },
 });

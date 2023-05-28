@@ -79,7 +79,7 @@ export default {
   data() {},
   methods: {
     cadastrar() {
-      var reg = {
+      var person = {
         nome: this.nome,
         senha: this.senha,
         Peso: this.peso,
@@ -88,10 +88,10 @@ export default {
         nascimento: this.nascimento,
         sexo: this.sexo,
       };
-      this.$store.dispatch("sendRegister", reg);
+      this.$store.dispatch("sendperson", person);
     },
-    isInvalid(reg) {
-      return Object.values(reg).some((el) => !el);
+    isInvalid(person) {
+      return Object.values(person).some((el) => !el);
     },
     clear() {
       this.nome = "";
@@ -105,7 +105,7 @@ export default {
   },
   computed: {
     Registrados() {
-      return this.$store.getters.registers;
+      return this.$store.getters.persons;
     },
   },
 };
