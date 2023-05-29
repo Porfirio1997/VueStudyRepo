@@ -1,30 +1,21 @@
 <template>
-  <label>
-    {{ Text }}
-  </label>
-  <br />
-  <slot />
-  <br />
+  <span
+    >{{ TextLabel }}
+    <slot />
+    <br />
+  </span>
 </template>
 
-<script setup>
-defineProps({
-  Text: {
-    type: String,
+<script>
+export default {
+  props: {
+    TextLabel: String,
   },
-});
+};
 </script>
 
 <style scoped>
 label {
   color: #ffffff;
-}
-label input {
-  height: 1rem;
-  border: white 1px solid;
-  color: black;
-  margin: 0.1rem;
-  padding: 1rem;
-  border-radius: 0.2rem;
 }
 </style>

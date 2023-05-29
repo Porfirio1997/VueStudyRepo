@@ -3,16 +3,16 @@
   </header>-->
   <main>
     <div>
-      <h4>Cadastro de Pessoal.</h4>
-      <FieldComponent Text="Nome de usuário">
+      <h2>Cadastro de Pessoal.</h2>
+      <FieldComponent text-label="Nome de usuário">
         <input v-model.trim="nome" type="text" placeholder="Nome" />
       </FieldComponent>
 
-      <FieldComponent Text="Senha">
+      <FieldComponent TextLabel="Senha">
         <input v-model.trim="senha" placeholder="Senha" type="password" />
       </FieldComponent>
 
-      <FieldComponent Text="Peso">
+      <FieldComponent TextLabel="Peso">
         <input
           v-model.trim="peso"
           maxlength="5"
@@ -21,7 +21,7 @@
         />
       </FieldComponent>
 
-      <FieldComponent Text="Altura">
+      <FieldComponent TextLabel="Altura">
         <input
           v-model.trim="altura"
           maxlength="4"
@@ -30,32 +30,20 @@
         />
       </FieldComponent>
 
-      <FieldComponent Text="Telefone de contato">
+      <FieldComponent TextLabel="Telefone de contato">
         <input
           v-model.trim="telefone"
-          placeholder="99999999999"
-          :maxlength="13"
+          placeholder="(99) 99999 - 9999"
+          :maxlength="17"
           type="tel"
         />
       </FieldComponent>
 
-      <FieldComponent Text="Data Nascimento">
+      <FieldComponent TextLabel="Data Nascimento">
         <input v-model.trim="nascimento" placeholder="01/01/1991" type="date" />
       </FieldComponent>
 
-      <FieldComponent :Text="Sexo">
-        <input type="radio" id="male" value="false" v-model="sexo" />
-        <label for="male">Masculino</label>
-
-        <input type="radio" id="female" value="true" v-model="sexo" />
-        <label for="female">Feminino</label>
-      </FieldComponent>
-
       <button v-on:click="cadastrar()">Entrar</button>
-    </div>
-
-    <div>
-      <p v-for="(reg, index) in Registrados">{{ reg }}</p>
     </div>
   </main>
   <!---<footer>
@@ -71,7 +59,6 @@ const peso = ref("");
 const altura = ref("");
 const telefone = ref("");
 const nascimento = ref("");
-const sexo = ref(false);
 export default {
   created() {
     this.$store.dispatch("fetchRegisters");
@@ -111,46 +98,4 @@ export default {
 };
 </script>
 
-<style scoped>
-main {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-
-div {
-  flex: 1;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 100%;
-  gap: 0.3rem;
-  border: 0.1rem gray solid;
-  border-radius: 3%;
-  padding: 5rem;
-}
-
-input {
-  border: white 1px solid;
-  color: black;
-  margin: 0.3rem;
-  padding: 0.3rem;
-  border-radius: 0.2rem;
-}
-
-button {
-  cursor: pointer;
-  background-color: gray;
-  border: #392386 1px solid;
-  color: white;
-  padding: 0.3rem;
-  border-radius: 0.2rem;
-  align-self: center;
-  width: 100%;
-}
-</style>
+<style scoped></style>

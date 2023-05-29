@@ -34,6 +34,7 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+  --margin-gap: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,8 +49,21 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
   }
+
+  input {
+    border: var(--vt-c-divider-dark-2) 1px solid;
+    color: var(--vt-c-text-light-2);
+  }
+
+  .app div {
+    border: var(--color-border) solid;
+    border-radius: 3%;
+    padding: 5rem;
+  }
 }
 
+@media (prefers-color-scheme: dark) {
+}
 *,
 *::before,
 *::after {
@@ -72,4 +86,35 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+  background-color: gray;
+  border: #392386 1px solid;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  align-self: center;
+  width: 100%;
+  margin: var(--margin-gap);
+}
+
+input {
+  margin: 0.3rem;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+}
+
+.app div {
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  gap: 0.4rem;
+  border: 0.1rem gray solid;
+  border-radius: 3%;
+  padding: 5rem;
 }
