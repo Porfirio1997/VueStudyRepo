@@ -1,12 +1,13 @@
 @import "./base.css";
 
 #app {
-  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.1rem;
   font-weight: normal;
 }
-
 a,
 .green {
   text-decoration: none;
@@ -23,12 +24,17 @@ a,
 @media (min-width: 1024px) {
   body {
     display: flex;
-    place-items: center;
+    place-items: initial;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
-
   #app {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    grid-template-columns: 1fr;
+    padding: 0.1rem;
   }
+}
+
+main {
+  padding: 1rem;
 }

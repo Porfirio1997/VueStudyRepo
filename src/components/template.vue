@@ -1,12 +1,5 @@
 <template></template>
 
-<script setup>
-props()({
-  tipo: {
-    type: String,
-    required: true,
-  },
-});
-</script>
+<script setup></script>
 
 <style scoped></style>
