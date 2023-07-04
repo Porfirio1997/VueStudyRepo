@@ -31,10 +31,35 @@ a,
   #app {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 0.1rem;
   }
 }
 
 main {
   padding: 1rem;
+}
+
+.row {
+  display: flex;
+  place-items: center;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--color-background);
+  gap: 15px;
+  margin: 0.3rem;
+}
+
+.row * {
+  flex: 1 1 150px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  aspect-ratio: 3/2;
+}
+
+.container {
+  padding: 0 0.5rem;
+  line-height: 1;
 }

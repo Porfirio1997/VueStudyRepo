@@ -19,19 +19,20 @@
 const Routes = [
   { link: "/", label: "Início" },
   { link: "/Vendas", label: "Vendas" },
-  { link: "/Cafe", label: "café" },
+  { link: "/Carrinho", label: "Carrinho" },
 ];
 </script>
 
 <style scoped>
 /* Navigation bar */
 nav {
-  background: #5434af;
+  background: var(--color-background);
   height: 70px;
-  width: 100%;
+  width: 100vw;
+  margin-bottom: 1px solid var(--color-border);
 }
 label.logo {
-  color: white;
+  color: var(--color-text);
   font-size: 2rem;
   line-height: 70px;
   padding: 0 20px;
@@ -54,7 +55,7 @@ nav ul li {
   margin: 0 5px;
 }
 nav ul li a {
-  color: white;
+  color: var(--color-text);
   font-size: 17px;
   padding: 7px 13px;
   border-radius: 3px;
@@ -86,7 +87,7 @@ a:hover {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #1d075f;
+    background: var(--color-background);
     top: 80px;
     left: -100%;
     text-align: center;
