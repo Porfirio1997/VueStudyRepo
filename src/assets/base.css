@@ -78,7 +78,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0 0;
+  padding: 0rem 0rem;
   min-height: 100vh;
   min-width: 100vw;
   color: var(--color-text);

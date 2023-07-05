@@ -40,14 +40,21 @@ main {
 
 .row {
   display: flex;
-  place-items: center;
   justify-content: flex-start;
   align-items: center;
   background-color: var(--color-background);
   gap: 15px;
   margin: 0.3rem;
 }
-
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: end;
+  background-color: var(--color-background);
+  gap: 15px;
+  margin: 0.3rem;
+}
 .row * {
   flex: 1 1 150px;
 }
@@ -61,5 +68,9 @@ img {
 
 .container {
   padding: 0 0.5rem;
-  line-height: 1;
+  line-height: 1.5;
+}
+.dualcolumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

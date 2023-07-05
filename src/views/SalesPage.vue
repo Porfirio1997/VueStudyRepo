@@ -1,15 +1,32 @@
 <template>
-  <sales />
+  <div class="container column">
+    <div class="row">
+      <salesSum :VendasTotal="VendasTotal" />
+    </div>
+
+    <div class="column">
+      <span v-for="sale in vendas">
+        <SalesItem :Nome="sale.Name" :Valor="sale.Value" />
+      </span>
+    </div>
+  </div>
 </template>
 
 <script>
-import sales from "../components/SalesSum.vue";
+import salesSum from "../components/SalesSum.vue";
+import SalesItem from "../components/SalesItem.vue";
 export default {
-  components: { sales },
+  components: { salesSum, SalesItem },
   Props: {},
-  created() {},
+  created() {
+    this.vendas = this.$store.state.sales;
+    this.VendasTotal = this.$store.getters.salesSum;
+  },
   data() {
-    return {};
+    return {
+      vendas: [],
+      VendasTotal: 0,
+    };
   },
   methods: {},
   computed: {},

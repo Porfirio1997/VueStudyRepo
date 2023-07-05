@@ -1,8 +1,10 @@
-<template></template>
+<template>
+  <h2>Montando o componente do Carrinho de compras</h2>
+</template>
 
 <script>
 export default {
-  props: {},
+  Props: {},
   created() {},
   data() {
     return {};

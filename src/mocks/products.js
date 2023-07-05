@@ -1,5 +1,6 @@
 const products = [
   {
+    id: 1,
     brand: "Growth",
     type: "whey",
     quantity: 6,
@@ -7,6 +8,7 @@ const products = [
     BuyingPrice: 99.0,
   },
   {
+    id: 2,
     brand: "Growth",
     type: "creatina",
     quantity: 11,
@@ -14,6 +16,7 @@ const products = [
     BuyingPrice: 79.92,
   },
   {
+    id: 3,
     brand: "Growth",
     type: "pré-treino",
     quantity: 2,

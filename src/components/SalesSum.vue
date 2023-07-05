@@ -1,16 +1,16 @@
 <template>
-  <Span> Saldo total das vendas. </Span>
-  <h3>{{ "R$ " + (Math.round(VendasTotal * 100) / 100).toFixed(2) }}</h3>
+  <div class="box">
+    <span> Saldo total das vendas. </span>
+    <h3>{{ "R$ " + (Math.round(VendasTotal * 100) / 100).toFixed(2) }}</h3>
+  </div>
 </template>
 
 <script>
 export default {
-  Props: {},
+  props: { VendasTotal: Number },
   created() {},
   data() {
-    return {
-      VendasTotal: 150.0,
-    };
+    return {};
   },
   methods: {
     colorize() {
@@ -24,5 +24,12 @@ export default {
 <style scoped>
 h3 {
   color: v-bind(colorize());
+}
+.box {
+  float: right;
+  padding: 0.5rem;
+  border: 0.1rem solid var(--color-border);
+  border-radius: 5%;
+  margin: 0.5rem;
 }
 </style>

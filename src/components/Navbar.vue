@@ -1,7 +1,12 @@
 <template>
   <nav>
-    <input type="checkbox" id="check" v-model="checkbox" />
-    <label for="check" class="checkbtn"> X </label>
+    <input type="checkbox" id="check" />
+    <label for="check" class="checkbtn">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
+
     <label class="logo">
       <a href="/">
         <img src="../assets/Logo Cyber.jpeg" alt="Cyber Suplementos" />
@@ -28,8 +33,7 @@ const Routes = [
 nav {
   background: var(--color-background);
   height: 70px;
-  width: 100vw;
-  margin-bottom: 1px solid var(--color-border);
+  padding: 0.5rem;
 }
 label.logo {
   color: var(--color-text);
@@ -39,8 +43,8 @@ label.logo {
   font-weight: bold;
 }
 label.logo img {
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   object-fit: contain;
   aspect-ratio: 3/2;
 }
@@ -57,7 +61,7 @@ nav ul li {
 nav ul li a {
   color: var(--color-text);
   font-size: 17px;
-  padding: 7px 13px;
+  padding: 10px 25px;
   border-radius: 3px;
   text-transform: uppercase;
 }
@@ -67,11 +71,11 @@ a:hover {
   transition: 0.5s;
 }
 .checkbtn {
-  font-size: 30px;
-  color: white;
+  position: relative;
+  font-size: 50px;
+  color: black;
   float: right;
   line-height: 80px;
-  margin-right: 40px;
   cursor: pointer;
   display: none;
 }
@@ -79,10 +83,36 @@ a:hover {
   display: none;
 }
 
+.checkbtn > div {
+  height: 8px;
+  width: 85%;
+  margin: auto;
+  border-radius: 5px;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+  top: 15%;
+  transition: 0.5s ease-in-out;
+}
+
+.checkbtn > :nth-child(2) {
+  position: absolute;
+  top: 45%;
+}
+.checkbtn > :nth-child(3) {
+  position: absolute;
+  top: 80%;
+}
+
 @media (max-width: 858px) {
   .checkbtn {
     display: block;
+    width: 60px;
+    height: 60px;
+    /* background-color: gray; */
+    padding: 0.25rem;
   }
+
   ul {
     position: fixed;
     width: 100%;
@@ -108,6 +138,17 @@ a:hover {
   }
   #check:checked ~ ul {
     left: 0;
+  }
+
+  #check:checked ~ .checkbtn > div {
+    transform: translateY(18px) rotate(135deg);
+  }
+
+  #check:checked ~ .checkbtn > :nth-child(2) {
+    transform: rotate(135deg);
+  }
+  #check:checked ~ .checkbtn > :nth-child(3) {
+    transform: translateY(-20px) rotate(45deg);
   }
 }
 </style>

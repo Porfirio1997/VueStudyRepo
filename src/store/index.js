@@ -8,7 +8,12 @@ const store = createStore({
       sales: [...sales],
     };
   },
-  getters: {},
+  getters: {
+    salesSum(state) {
+      let init = 0;
+      return state.sales.reduce((acc, curr) => acc + curr.Value, init);
+    },
+  },
   mutations: {},
   actions: {},
   modules: {
