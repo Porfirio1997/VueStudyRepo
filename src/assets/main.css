@@ -1,76 +1,40 @@
 @import "./base.css";
 
-#app {
+header,
+main,
+footer {
+  margin: var(--margin-gap);
+}
+header {
+  min-height: 3vh;
+
+  background-color: red;
+}
+main {
+  height: 80vh;
+
+  background-color: green;
+}
+footer {
+  min-height: 5vh;
+  background-color: blue;
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
-  min-width: 100vw;
-  margin: 0 auto;
-  padding: 0.1rem;
-  font-weight: normal;
-}
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: initial;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  #app {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-}
-
-main {
-  padding: 1rem;
+  height: clamp(600px, 100%, 2048px);
+  width: clamp(600px, 100%, 2048px);
+  padding: 0 0.5rem;
+  line-height: 1.6;
 }
 
 .row {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: var(--color-background);
-  gap: 15px;
-  margin: 0.3rem;
+  flex-direction: row;
 }
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: end;
-  background-color: var(--color-background);
-  gap: 15px;
-  margin: 0.3rem;
+.gap {
+  gap: 10px;
 }
-.row * {
-  flex: 1 1 150px;
-}
-
 img {
-  height: 100px;
-  width: 100px;
-  object-fit: contain;
-  aspect-ratio: 3/2;
-}
-
-.container {
-  padding: 0 0.5rem;
-  line-height: 1.5;
-}
-.dualcolumn {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  z-index: 0;
 }

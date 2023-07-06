@@ -1,33 +1,32 @@
 <template>
-  <div class="container">
-    <h1>Bem vindo a Cyber Suplementos</h1>
-    <products
-      v-for="p in produtos"
-      :tipo="p.type"
-      :marca="p.brand"
-      :quantidade="p.quantity"
-      :PrecoVenda="p.retailPrice"
-    />
+  <div class="wrapper">
+    <h2>Página principal</h2>
+    <br />
+    <div class="wrapper row gap">
+      <ProductCard
+        v-for="product in products"
+        :DetailText="product.brand"
+        DetailHeadLine="Whey Growth"
+        DetailQuantity="10"
+        DetailPrice="150.00"
+      />
+    </div>
   </div>
 </template>
+
 <script>
-import products from "../components/Products.vue";
+import ProductCard from "../components/Product/ProductCard.vue";
+import products from "../mocks/products";
 export default {
-  components: { products },
+  components: { ProductCard },
+  props: {},
+  created() {},
   data() {
-    return { produtos: [] };
-  },
-  created() {
-    this.produtos = this.$store.state.products;
+    return { products: [...products] };
   },
   methods: {},
   computed: {},
 };
 </script>
 
-<style scoped>
-.container {
-  padding: 0 0.5rem;
-  line-height: 1;
-}
-</style>
+<style scoped></style>

@@ -29,12 +29,6 @@ const sales = [
     Midst: "Instagram",
     SaledProducts: [{ id: 1, qtde: 1 }],
   },
-  {
-    Name: "Pedr898o",
-    Value: 190.25,
-    Midst: "Instagram",
-    SaledProducts: [{ id: 1, qtde: 1 }],
-  },
 ];
 
 export default sales;

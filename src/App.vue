@@ -1,19 +1,22 @@
 <template>
   <header>
-    <NavBar />
+    <NavigationBar />
   </header>
   <main>
     <router-view />
   </main>
-  <!---<footer>
-  </footer> -->
+  <footer>
+    <FooterBar />
+  </footer>
 </template>
 
 <script>
-import NavBar from "./components/NavBar.vue";
+import NavigationBar from "./components/NavigationBar.vue";
+import FooterBar from "./components/FooterBar.vue";
 export default {
   components: {
-    NavBar,
+    NavigationBar,
+    FooterBar,
   },
   created() {
     //this.$store.dispatch("fetchRegisters");
