@@ -23,6 +23,30 @@ const products = [
     retailPrice: 135.0,
     BuyingPrice: 103.5,
   },
+  {
+    id: 4,
+    brand: "Growth",
+    type: "pré-treino",
+    quantity: 2,
+    retailPrice: 135.0,
+    BuyingPrice: 103.5,
+  },
+  {
+    id: 5,
+    brand: "Growth",
+    type: "pré-treino",
+    quantity: 2,
+    retailPrice: 150.0,
+    BuyingPrice: 103.5,
+  },
+  {
+    id: 6,
+    brand: "Growth",
+    type: "pré-treino",
+    quantity: 2,
+    retailPrice: 160.0,
+    BuyingPrice: 103.5,
+  },
 ];
 
 export default products;

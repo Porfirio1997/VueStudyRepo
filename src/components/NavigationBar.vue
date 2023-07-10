@@ -12,6 +12,7 @@
         </li>
       </ul>
     </div>
+    <span> car + {{ this.$store.state.cart.length }} </span>
   </nav>
 </template>
 

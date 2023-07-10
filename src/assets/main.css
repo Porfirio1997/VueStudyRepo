@@ -11,9 +11,8 @@ header {
   background-color: red;
 }
 main {
-  height: 80vh;
-
-  background-color: green;
+  min-height: 80vh;
+  padding: 1rem 0;
 }
 footer {
   min-height: 5vh;
@@ -31,6 +30,10 @@ footer {
 
 .row {
   flex-direction: row;
+  flex-wrap: wrap;
+  * {
+    flex: 1 1 500px;
+  }
 }
 .gap {
   gap: 10px;

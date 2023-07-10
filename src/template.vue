@@ -2,6 +2,7 @@
 
 <script>
 export default {
+  components: {},
   props: {},
   created() {},
   data() {
