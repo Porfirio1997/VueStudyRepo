@@ -20,12 +20,13 @@
         {{ ("" + DetailPricePromotion).padEnd(2, "0").replace(".", ",") }}</span
       >
       <span class="product-card-controls">
-        <button @click="this.$emit('addButton', id)">+</button>
+        <button @click="this.$emit('addButton', id)">adicionar</button>
+
         <button
-          v-if="this.$store.state.cart.filter((el) => el.id == id) !== []"
+          v-if="this.$store.state.cart.findIndex((e) => e.id == id) != -1"
           @click="this.$emit('minusButton', id)"
         >
-          -
+          remover
         </button>
       </span>
     </div>
@@ -102,8 +103,8 @@ export default {
 .product-card-controls {
   display: flex;
   * {
-    flex: 1 1 30px;
-    padding: 1rem;
+    flex: 1 1 25px;
+    padding: 0.5rem;
   }
 }
 </style>

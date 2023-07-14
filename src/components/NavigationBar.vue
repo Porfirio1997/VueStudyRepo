@@ -10,14 +10,20 @@
         <li v-for="route in routes">
           <router-link :to="route.path">{{ route.name }}</router-link>
         </li>
+        <li>
+          <router-link to="/cart">
+            <cart />
+          </router-link>
+        </li>
       </ul>
     </div>
-    <span> car + {{ this.$store.state.cart.length }} </span>
   </nav>
 </template>
 
 <script>
+import cart from "./NavCart.vue";
 export default {
+  components: { cart },
   props: {},
   created() {},
   data() {

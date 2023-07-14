@@ -12,7 +12,6 @@
       @minusButton="removeFromCart"
     />
   </div>
-  {{ this.$store.state.cart }}
 </template>
 
 <script>
